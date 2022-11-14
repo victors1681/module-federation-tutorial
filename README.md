@@ -1,6 +1,6 @@
 Module Federation Tutorial
 
-[VIEWO DEMO](https://youtu.be/wMdt5W8sD54)
+[VIDEO DEMO](https://youtu.be/wMdt5W8sD54)
 
 ![alt text](https://raw.githubusercontent.com/victors1681/module-federation-tutorial/main/screenshot/Micro-frontend-architecture-cover.jpg)
 
