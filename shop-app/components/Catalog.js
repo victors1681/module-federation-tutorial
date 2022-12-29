@@ -8,9 +8,9 @@ export const Catalog = () => {
 
     const fetchData = async () => {
         try{
-            const response = await fetch("https://qa.vroom.com/vcm-api/listings?zip=77002&price=10999-87000&sort=55&geofence=true")
+            const response = await fetch("https://jsonplaceholder.typicode.com/photos")
             const data = await response.json();
-            setList(data.results.data);
+            setList(data);
         }catch (err) {
             console.error(err)
         }
@@ -24,9 +24,9 @@ export const Catalog = () => {
         <Link href="/">Go Back</Link>
         <div style={{ display: "flex", width: "750px", gap: "20px", flexWrap: "wrap", marginTop: "25px" }}>
             {list.map(d => {
-                return <div key={d.vin} style={cardStyle}>
-                    <p>{d.make} {d.model} {d.year}</p>
-                    <img width={200} src={`https://images.carstory.com/${d.id}/1/t/690x-`}></img>
+                return <div key={d.id} style={cardStyle}>
+                    <p>{d.title}</p>
+                    <img width={200} src={d.url}></img>
                 </div>
             })}
         </div>
