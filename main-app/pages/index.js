@@ -4,6 +4,7 @@ import Footer from "../components/Footer"
 import Nav from "../components/Nav"
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
+import { Button, Typography } from '@mui/material'
 
 const CatalogComponent = dynamic(()=> import("shop/catalog"))
 
@@ -18,10 +19,11 @@ export default function Home() {
       </Head>
     <Nav>This is my nav from main app 1</Nav>
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <Typography variant='h1'>
           Welcome to the main app port: 3000
-        </h1> 
+        </Typography> 
         <Link href="/catalogOnMain">Go to catalog</Link>
+        <Button variant='contained' color='primary'>Test</Button>
 
     Component from shop
     <CatalogComponent/>
