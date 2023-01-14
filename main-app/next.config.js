@@ -15,6 +15,12 @@ const nextConfig = {
         exposes: {
           './footer': './components/Footer.js',
           './nav': './components/Nav.js'
+        },
+        shared: {
+          'share-module-federation-tutorial': {
+            import: "share-module-federation-tutorial",
+            shareKey: "share-module-federation-tutorial",
+          }
         }
       })
     );
