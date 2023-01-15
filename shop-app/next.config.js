@@ -11,6 +11,15 @@ const nextConfig = {
     config.plugins.push(
       new NextFederationPlugin({
         name: 'shop',
+        extraOptions: {
+          automaticAsyncBoundary: true
+        },
+        shared: {
+          'share-module-federation-tutorial': {
+            import: "share-module-federation-tutorial",
+            shareKey: "share-module-federation-tutorial",
+          }
+        },
         remotes: {
           main: `main@http://localhost:3000/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
         },

@@ -8,6 +8,15 @@ const nextConfig = {
     config.plugins.push(
       new NextFederationPlugin({
         name: 'main',
+        extraOptions: {
+          automaticAsyncBoundary: true
+        },
+        shared: {
+          'share-module-federation-tutorial': {
+            import: "share-module-federation-tutorial",
+            shareKey: "share-module-federation-tutorial",
+          }
+        },
         remotes: {
           shop: `shop@http://localhost:3001/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
         },
@@ -15,12 +24,6 @@ const nextConfig = {
         exposes: {
           './footer': './components/Footer.js',
           './nav': './components/Nav.js'
-        },
-        shared: {
-          'share-module-federation-tutorial': {
-            import: "share-module-federation-tutorial",
-            shareKey: "share-module-federation-tutorial",
-          }
         }
       })
     );
